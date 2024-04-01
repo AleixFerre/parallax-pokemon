@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const boxes = document.querySelectorAll('.box');
 
   boxes.forEach((box) => {
-    const maxMovement = 50;
+    const maxMovement = 30;
 
     box.addEventListener('mousemove', (e) => {
       const centerX = box.offsetLeft + box.offsetWidth / 2;
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const mouseX = e.pageX - centerX;
       const mouseY = e.pageY - centerY;
 
-      const moveX = (mouseX / centerX) * maxMovement;
+      const moveX = (mouseX / centerX) * maxMovement * 2;
       const moveY = (mouseY / centerY) * maxMovement;
 
       const front = box.querySelector('.front');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       front.style.transform = `translate(${moveX}px, ${moveY}px)`;
       bg.style.transform = `translate(calc(-50% + ${-moveX}px + var(--size)/2), calc(-50% + ${-moveY}px + var(--size)/2))`;
       bg.style.backgroundImage = `url(assets/images/background/bg${bg.id}_blurred.png)`;
-      box.style.transform = `perspective(400px) rotateY(${-moveX}deg) rotateX(${-moveY}deg)`;
+      box.style.transform = `perspective(400px) rotateY(${moveX}deg) rotateX(${-moveY}deg)`;
     });
 
     box.addEventListener('mouseleave', () => {
