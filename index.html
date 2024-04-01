@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Cool Parallax Effect</title>
+</head>
+
+<body>
+  <!-- USED TO PREFETCH THE HOVER -->
+  <div style="width:1px; height:1px; visibility:hidden; overflow:hidden">
+    <img src="assets/images/background/bg1_blurred.png" />
+    <img src="assets/images/background/bg2_blurred.png" />
+    <img src="assets/images/background/bg3_blurred.png" />
+  </div>
+
+  <div class="centered">
+    <div class="container">
+      <h1>My favourite Pokémon</h1>
+      <div class="images">
+        <div class="box">
+          <div id="1" class="bg bg-1"></div>
+          <div class="front front-1"></div>
+          <div class="name">Squirtle</div>
+        </div>
+        <div class="box">
+          <div id="2" class="bg bg-2"></div>
+          <div class="front front-2"></div>
+          <div class="name">Mew</div>
+        </div>
+        <div class="box">
+          <div id="3" class="bg bg-3"></div>
+          <div class="front front-3"></div>
+          <div class="name">Eevee</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="animation.js"></script>
+</body>
+
+</html>
